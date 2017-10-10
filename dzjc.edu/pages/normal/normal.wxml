@@ -1,0 +1,31 @@
+<view class="index">
+    <view class="head">
+        <view class="title">传感器</view>
+        <view class="desc">浙江地区</view>
+    </view>
+    <view class="body">
+        <view class="widgets">
+            <block wx:for="{{obsInfos}}"wx:for-index="obsindex">
+                <view wx:if="{{obsindex%2==0}}" style="background:#EDEDED" class="widgets__item">
+                <navigator url="../datacheck/datacheck?obsid={{item.id}}">
+                    <view id="{{item.id}}" class="widgets__info " bindtap="widgetsToggle">
+                        <text class="widgets__info-name">{{item.obsName}}</text>
+                        <image class="widgets__info-img" src="/image/arrowright.png" mode="aspectFill" />
+                    </view>
+                    </navigator>
+                </view>
+
+  <view wx:else class="widgets__item">
+                <navigator url="../datacheck/datacheck?obsid={{item.id}}">
+                    <view id="{{item.id}}" class="widgets__info " bindtap="widgetsToggle">
+                        <text class="widgets__info-name">{{item.obsName}}</text>
+                        <image class="widgets__info-img" src="/image/arrowright.png" mode="aspectFill" />
+                    </view>
+                    </navigator>
+                </view>
+
+            </block>
+        </view>
+    </view>
+</view>
+

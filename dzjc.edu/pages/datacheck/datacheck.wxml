@@ -1,0 +1,32 @@
+<view class="index">
+  <view class="head">
+    <view class="title">传感器信息</view>
+    <view class="desc">传感器数据信息</view>
+  </view>
+  <view class="body">
+    <view class="widgets">
+      <block wx:for-items="{{obsSensor.obsSensorTypes}}">
+        <view class="widgets__item">
+          <view id="{{item.sensortypeid}}" class="widgets__info {{item.open ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+            <text class="widgets__info-name">{{item.sensorTypeName}}</text>
+            <image class="widgets__info-img" src="/image/arrowright.png" mode="aspectFill" />
+          </view>
+          <view class="widgets__list {{item.open ? 'widgets__list_show' : ''}}">
+          <canvas style="width: 310px; height: 200px;" canvas-id="linecanvas{{item.sensortypeid}}" />
+          <canvas style="width: 310px; height: 200px;" canvas-id="linecanvas5days{{item.sensortypeid}}" />
+             
+<view class="widget__line {{index == 0 ? 'widget__line_first' : ''}}"></view>
+            <!--navigator url="component-pages/{{page}}/{{page}}" class="widget">
+                <text class="widget__name">{{page}}</text>
+                <image class="widget__arrow" src="/image/arrowright.png" mode="aspectFill" />
+                
+              </navigator-->
+
+            <!--block wx:for-items="{{item.sensortypeid}}" wx:for-item="sensortypeid">
+            </block-->
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
